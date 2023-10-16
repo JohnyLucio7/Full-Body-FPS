@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Locomotion : MonoBehaviour
@@ -25,12 +23,17 @@ public class Locomotion : MonoBehaviour
     #endregion
 
     #region BuiltIn Methods
+
+    private void OnAnimatorMove()
+    {
+        UpdatePhysics();
+    }
     private void FixedUpdate()
     {
         UpdateMovementInput();
-        UpdatePhysics();
         UpdateAnimation();
     }
+
     #endregion
 
     #region Custom Methods
